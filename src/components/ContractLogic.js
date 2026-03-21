@@ -73,7 +73,7 @@ const ContractLogic = () => {
         }
       });
     }
-  }, []);
+  }, [initConnection]);
 
   // ── Fetch baseURI from contract once provider is available ────────────────
 
@@ -149,7 +149,7 @@ const ContractLogic = () => {
     } finally {
       setLoadingTypes((prev) => ({ ...prev, [dataType]: false }));
     }
-  }, [baseURI, tokenCache]);
+  }, [baseURI, tokenCache, account, provider]);
 
   // ── Check on-chain balances for a set of token IDs ────────────────────────
 
@@ -179,7 +179,7 @@ const ContractLogic = () => {
     if (provider && account) {
       Object.keys(tokenCache).forEach((dataType) => checkBalances(dataType));
     }
-  }, [account, provider]);
+  }, [account, provider, checkBalances, tokenCache]);
 
   // ── Agreement toggle (local UI state only) ────────────────────────────────
 

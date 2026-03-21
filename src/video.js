@@ -21,7 +21,7 @@ function Video() {
 
   useEffect(() => {
     if (baseURI) fetchTokensByType("video");
-  }, [baseURI]);
+  }, [baseURI, fetchTokensByType]);
 
   const videoAssets = tokenCache["video"] || [];
   const isLoading   = loadingTypes["video"];

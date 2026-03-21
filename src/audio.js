@@ -21,7 +21,7 @@ function Audio() {
 
   useEffect(() => {
     if (baseURI) fetchTokensByType("audio");
-  }, [baseURI]);
+  }, [baseURI, fetchTokensByType]);
 
   const audioAssets = tokenCache["audio"] || [];
   const isLoading   = loadingTypes["audio"];

@@ -21,7 +21,7 @@ function Images() {
 
   useEffect(() => {
     if (baseURI) fetchTokensByType("image");
-  }, [baseURI]);
+  }, [baseURI, fetchTokensByType]);
 
   const imageAssets = tokenCache["image"] || [];
   const isLoading   = loadingTypes["image"];

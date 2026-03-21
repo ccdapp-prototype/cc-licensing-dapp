@@ -21,7 +21,7 @@ function Documents() {
 
   useEffect(() => {
     if (baseURI) fetchTokensByType("document");
-  }, [baseURI]);
+  }, [baseURI, fetchTokensByType]);
 
   const docAssets = tokenCache["document"] || [];
   const isLoading = loadingTypes["document"];
