@@ -1,0 +1,11 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Inter, Helvetica, Monaco, Consolas, "Courier New", monospace; /* Monaco, Consolas, "Courier New", monospace; */
+  background-color: rgb(29, 29, 29);
+  color: white;
+}
+
