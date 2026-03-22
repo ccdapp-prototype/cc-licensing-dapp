@@ -110,19 +110,19 @@ function Ledger() {
 
       <div style={{ overflowX: "auto", padding: "0 16px 24px 16px" }}>
         {isLoading && (
-          <p style={{ textAlign: "center", color: "#aaa", marginTop: "40px" }}>
+          <p style={{ textAlign: "center", color: "#e9e8e8ff", marginTop: "40px" }}>
             Loading events from the blockchain...
           </p>
         )}
 
         {error && (
-          <p style={{ textAlign: "center", color: "#ff6b6b", marginTop: "40px" }}>
+          <p style={{ textAlign: "center", color: "#fcdbdbff", marginTop: "40px" }}>
             {error}
           </p>
         )}
 
         {!isLoading && !error && events.length === 0 && (
-          <p style={{ textAlign: "center", color: "#aaa", marginTop: "40px" }}>
+          <p style={{ textAlign: "center", color: "#e9e8e8ff", marginTop: "40px" }}>
             No licensing events found yet.
           </p>
         )}
