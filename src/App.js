@@ -31,7 +31,7 @@ function App() {
                 padding: "20px",
               }}>
                 <p>
-                 <h1> Welcome to the Creative Commons Licensing dApp</h1><br />
+                 <h1> Welcome to the Creative Commons Licensing dApp prototype</h1><br />
                   <p>Connect your Web3 wallet and click an asset type above to browse
                   and license Creative Commons assets.</p>
                   <br />
