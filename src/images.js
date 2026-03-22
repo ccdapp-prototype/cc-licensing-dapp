@@ -31,8 +31,8 @@ function Images() {
     <div className="page">
       <h2>Image Assets ({imageAssets.length})</h2>
       <div className="main">
-        {isLoading && <p style={{ color: "#aaa" }}>Loading image assets...</p>}
-        {error     && <p style={{ color: "#ff6b6b" }}>{error}</p>}
+        {isLoading && <p style={{ color: "#e9e8e8ff" }}>Loading image assets...</p>}
+        {error     && <p style={{ color: "#fcdbdbff" }}>{error}</p>}
         {!isLoading && !error && imageAssets.length === 0 && (
           <p style={{ color: "#aaa" }}>No image assets found.</p>
         )}

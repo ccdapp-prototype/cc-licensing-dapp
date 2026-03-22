@@ -31,8 +31,8 @@ function Video() {
     <div className="page">
       <h2>Video Assets ({videoAssets.length})</h2>
       <div className="main">
-        {isLoading && <p style={{ color: "#aaa" }}>Loading video assets...</p>}
-        {error     && <p style={{ color: "#ff6b6b" }}>{error}</p>}
+        {isLoading && <p style={{ color: "#e9e8e8ff" }}>Loading video assets...</p>}
+        {error     && <p style={{ color: "#fcdbdbff" }}>{error}</p>}
         {!isLoading && !error && videoAssets.length === 0 && (
           <p style={{ color: "#aaa" }}>No video assets found.</p>
         )}

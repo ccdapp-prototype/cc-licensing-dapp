@@ -31,8 +31,8 @@ function Documents() {
     <div className="page">
       <h2>Document Assets ({docAssets.length})</h2>
       <div className="main">
-        {isLoading && <p style={{ color: "#aaa" }}>Loading document assets...</p>}
-        {error     && <p style={{ color: "#ff6b6b" }}>{error}</p>}
+        {isLoading && <p style={{ color: "#e9e8e8ff" }}>Loading document assets...</p>}
+        {error     && <p style={{ color: "#fcdbdbff" }}>{error}</p>}
         {!isLoading && !error && docAssets.length === 0 && (
           <p style={{ color: "#aaa" }}>No document assets found.</p>
         )}

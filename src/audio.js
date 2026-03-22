@@ -31,8 +31,8 @@ function Audio() {
     <div className="page">
       <h2>Audio Assets ({audioAssets.length})</h2>
       <div className="main">
-        {isLoading && <p style={{ color: "#aaa" }}>Loading audio assets...</p>}
-        {error     && <p style={{ color: "#ff6b6b" }}>{error}</p>}
+        {isLoading && <p style={{ color: "#e9e8e8ff" }}>Loading audio assets...</p>}
+        {error     && <p style={{ color: "#fcdbdbff" }}>{error}</p>}
         {!isLoading && !error && audioAssets.length === 0 && (
           <p style={{ color: "#aaa" }}>No audio assets found.</p>
         )}
