@@ -116,18 +116,22 @@ function Ledger() {
     .sort((a, b) => newestFirst ? b.block - a.block : a.block - b.block)
     .filter((e) => {
       if (!searchQuery.trim()) return true;
-      const q = searchQuery.toLowerCase();
-      return (
-        e.tokenId.toLowerCase().includes(q)        ||
-        e.title.toLowerCase().includes(q)           ||
-        e.creator.toLowerCase().includes(q)         ||
-        e.license.toLowerCase().includes(q)         ||
-        e.licensee.toLowerCase().includes(q)        ||
-        e.timestamp.toLowerCase().includes(q)       ||
-        e.block.toString().includes(q)              ||
-        e.txHash.toLowerCase().includes(q)          ||
-        (e.agreement ? "agreed" : "no").includes(q)
-      );
+      // Split query into individual words so searching "Apple _TSK_" matches
+      // events where one field contains "Apple" and another contains "_TSK_"
+      const words = searchQuery.toLowerCase().trim().split(/\s+/);
+      const fields = [
+        e.tokenId.toLowerCase(),
+        e.title.toLowerCase(),
+        e.creator.toLowerCase(),
+        e.license.toLowerCase(),
+        e.licensee.toLowerCase(),
+        e.timestamp.toLowerCase(),
+        e.block.toString(),
+        e.txHash.toLowerCase(),
+        e.agreement ? "agreed" : "no",
+      ];
+      // Every word must match at least one field
+      return words.every((word) => fields.some((field) => field.includes(word)));
     });
 
   // ── Pagination ─────────────────────────────────────────────────────────────
@@ -148,7 +152,7 @@ function Ledger() {
   return (
     <div className="page">
       <h2>CC Asset Licensing Ledger</h2>
-      <p style={{ textAlign: "center", color: "#eee", marginTop: "6px", marginBottom: "16px" }}>
+      <p style={{ textAlign: "center", fontSize: "13px", color: "#eee", marginTop: "6px", marginBottom: "16px" }}>
         All licensing events created via this dApp, recorded on the Sepolia blockchain.
       </p>
 
@@ -234,7 +238,7 @@ function Ledger() {
                   <th style={thStyle}>Creator Attributed</th>
                   <th style={thStyle}>License</th>
                   <th style={thStyle}>Agreement</th>
-                  <th style={thStyle}>Licensee Wallet ID</th>
+                  <th style={thStyle}>Licensee Wallet</th>
                   <th style={thStyle}>Tx</th>
                 </tr>
               </thead>
