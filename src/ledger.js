@@ -234,7 +234,7 @@ function Ledger() {
                   <th style={thStyle}>Creator Attributed</th>
                   <th style={thStyle}>License</th>
                   <th style={thStyle}>Agreement</th>
-                  <th style={thStyle}>Licensee Wallet</th>
+                  <th style={thStyle}>Licensee Wallet ID</th>
                   <th style={thStyle}>Tx</th>
                 </tr>
               </thead>
