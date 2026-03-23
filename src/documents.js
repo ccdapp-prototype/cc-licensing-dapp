@@ -34,7 +34,7 @@ function Documents() {
         {isLoading && <p style={{ color: "#e9e8e8ff" }}>Loading document assets...</p>}
         {error     && <p style={{ color: "#fcdbdbff" }}>{error}</p>}
         {!isLoading && !error && docAssets.length === 0 && (
-          <p style={{ color: "#aaa" }}>No document assets found.</p>
+          <p style={{ color: "#e9e8e8ff" }}>No document assets found.</p>
         )}
         {docAssets.map((assetToken, index) => (
           <AssetCard

@@ -34,7 +34,7 @@ function Audio() {
         {isLoading && <p style={{ color: "#e9e8e8ff" }}>Loading audio assets...</p>}
         {error     && <p style={{ color: "#fcdbdbff" }}>{error}</p>}
         {!isLoading && !error && audioAssets.length === 0 && (
-          <p style={{ color: "#aaa" }}>No audio assets found.</p>
+          <p style={{ color: "#e9e8e8ff" }}>No audio assets found.</p>
         )}
         {audioAssets.map((assetToken, index) => (
           <AssetCard

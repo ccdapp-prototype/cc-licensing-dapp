@@ -34,7 +34,7 @@ function Video() {
         {isLoading && <p style={{ color: "#e9e8e8ff" }}>Loading video assets...</p>}
         {error     && <p style={{ color: "#fcdbdbff" }}>{error}</p>}
         {!isLoading && !error && videoAssets.length === 0 && (
-          <p style={{ color: "#aaa" }}>No video assets found.</p>
+          <p style={{ color: "#e9e8e8ff" }}>No video assets found.</p>
         )}
         {videoAssets.map((assetToken, index) => (
           <AssetCard

@@ -34,7 +34,7 @@ function Images() {
         {isLoading && <p style={{ color: "#e9e8e8ff" }}>Loading image assets...</p>}
         {error     && <p style={{ color: "#fcdbdbff" }}>{error}</p>}
         {!isLoading && !error && imageAssets.length === 0 && (
-          <p style={{ color: "#aaa" }}>No image assets found.</p>
+          <p style={{ color: "#e9e8e8ff" }}>No image assets found.</p>
         )}
         {imageAssets.map((assetToken, index) => (
           <AssetCard
