@@ -32,9 +32,18 @@ function Ledger() {
         const provider = new ethers.JsonRpcProvider(RPC_URL);
         const contract = new ethers.Contract(CONTRACT_ADDRESS, abi, provider);
 
-        const DEPLOY_BLOCK = 10475875;
-        const filter = contract.filters.CCassetLicensed();
-        const logs   = await contract.queryFilter(filter, DEPLOY_BLOCK, "latest");
+        const DEPLOY_BLOCK  = 10475875;
+        const CHUNK_SIZE    = 49000; // stay safely under PublicNode's 50000 block limit
+        const filter        = contract.filters.CCassetLicensed();
+        const latestBlock   = await provider.getBlockNumber();
+
+        // Split the block range into chunks and merge results
+        const logs = [];
+        for (let from = DEPLOY_BLOCK; from <= latestBlock; from += CHUNK_SIZE) {
+          const to = Math.min(from + CHUNK_SIZE - 1, latestBlock);
+          const chunk = await contract.queryFilter(filter, from, to);
+          logs.push(...chunk);
+        }
 
         // Step 1: Fetch exact block timestamps in small batches.
         // PublicNode handles high-volume read-only requests without rate limiting.
