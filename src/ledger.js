@@ -162,7 +162,7 @@ function Ledger() {
     <div className="page">
       <h2>CC Asset Licensing Ledger</h2>
       <p style={{ textAlign: "center", fontSize: "13px", color: "#eee", marginTop: "6px", marginBottom: "16px" }}>
-        All licensing events created via this dApp, recorded on the Sepolia blockchain.
+        All licensing events created via this dApp, recorded on the Sepolia testnet on the Ethereum blockchain.
       </p>
 
       <div style={{ overflowX: "auto", padding: "0 16px 24px 16px" }}>
