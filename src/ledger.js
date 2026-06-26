@@ -9,7 +9,8 @@ const CONTRACT_ADDRESS = process.env.REACT_APP_CONTRACT_ADDRESS;
 
 // PublicNode is used here instead of Infura because the ledger makes many
 // read-only getBlock() calls which exceed Infura's free tier rate limits.
-const RPC_URL  = "https://ethereum-sepolia-rpc.publicnode.com";
+//const RPC_URL  = "https://ethereum-sepolia-rpc.publicnode.com"; - old RPC URL
+const RPC_URL  = process.env.REACT_APP_LEDGER_RPC_URL;
 const BASE_URI = "https://ipfs.io/ipfs/bafybeiabqeblsdpdh5pcnl5frctsbhisgfwm3wncqwrublixaw3fo4jczu/";
 
 const PAGE_SIZE  = 20;
